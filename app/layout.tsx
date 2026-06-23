@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
+import Provider from "@/components/HOC/Provider";
 
 const font = Roboto({
   weight:['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -20,12 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en" suppressHydrationWarning
       className={`${font.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Provider>
         <ResponsiveNav/>
         {children}
+        </Provider>
 
       </body>
     </html>
