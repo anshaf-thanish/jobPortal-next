@@ -71,7 +71,7 @@ const Nav = ({openNav}:Props) => {
           {/* theme toggler */}
           <ThemeToggler/>
           {/* burger menu */}
-          <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-black lg:hidden"/>
+          <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-black dark:text-white lg:hidden"/>
         </div>
       </div>
     </div>
