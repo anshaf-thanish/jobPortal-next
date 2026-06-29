@@ -4,11 +4,12 @@ import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import Provider from "@/components/HOC/Provider";
 import Footer from "@/components/Home/Footer/Footer";
+import ScrollToTop from "@/components/Helper/ScrollToTop";
 
 const font = Roboto({
-  weight:['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  subsets:['latin']
-})
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Job Portal ",
@@ -22,16 +23,17 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en" suppressHydrationWarning
+      lang="en"
+      suppressHydrationWarning
       className={`${font.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Provider>
-        <ResponsiveNav/>
-        {children}
-        <Footer/>
+          <ResponsiveNav />
+          {children}
+          <Footer />
+          <ScrollToTop />
         </Provider>
-
       </body>
     </html>
   );
